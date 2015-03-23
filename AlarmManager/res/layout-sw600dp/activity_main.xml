@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" 
+    android:background="@android:color/darker_gray">
+    
+    <fragment
+        android:id="@+id/list_fragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        class="com.example.alarmmanager.List_Fragment"
+         >
+    </fragment>
+
+    
+    <fragment
+        android:id="@+id/details_fragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        class="com.example.alarmmanager.Details_Fragment"
+         >
+    </fragment>
+
+</LinearLayout>

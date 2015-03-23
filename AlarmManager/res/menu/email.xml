@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+   <item
+         android:title="Save mail"
+         android:id="@+id/save_mail"
+        android:checkable="true"
+        android:enabled="true"
+        android:showAsAction="always"
+        android:visible="true"/>/>
+
+</menu>
