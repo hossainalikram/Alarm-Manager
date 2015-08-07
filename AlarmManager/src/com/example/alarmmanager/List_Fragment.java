@@ -6,6 +6,7 @@ import android.R.integer;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -42,6 +43,7 @@ public class List_Fragment extends Fragment {
 			throw new ClassCastException(activity.toString()
 					+ " must implemenet MyListFragment.Communicator");
 		}
+		
 	}
 
 	@Override
@@ -125,6 +127,16 @@ public class List_Fragment extends Fragment {
 				List_Fragment.contactArrayList.remove(p);
 				DatabaseReminder db = new DatabaseReminder(getActivity());
 				db.delete_one_row(id1);
+				
+				//MycontentProvider provider=new MycontentProvider();
+	
+
+				/*Uri uri = Uri.parse(MycontentProvider.CONTENT_URI + "/" + id1);
+				getcdelete(uri, null, null);*/
+				
+				
+				
+
 				db.ResetallEvent();
 				customizedEventAdaptar.notifyDataSetChanged();
 				lv.setAdapter(customizedEventAdaptar);
@@ -136,6 +148,8 @@ public class List_Fragment extends Fragment {
 
 		return view;
 	}
+	
+	
 
 	public interface Communicator {
 		public void contactdetails(String title, String details, String date,

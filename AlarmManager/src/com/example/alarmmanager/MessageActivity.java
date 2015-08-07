@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 
+import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -38,6 +39,8 @@ public class MessageActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_message);
+		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		et_to = (EditText) findViewById(R.id.et_phone_number);
 		et_body = (EditText) findViewById(R.id.et_message_body);
@@ -115,6 +118,12 @@ public class MessageActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
+		
+		if(item.getItemId()==android.R.id.home){
+			 NavUtils.navigateUpFromSameTask(this);        
+			 return true;
+			
+		}
 
 		if (item.getItemId() == R.id.save_message) {
 

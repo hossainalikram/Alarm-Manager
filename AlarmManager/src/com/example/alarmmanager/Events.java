@@ -9,11 +9,23 @@ public class Events {
 	String titleString;
 	String detailsString, timestring, datesString, email, phone;
 
+	public Events(String titleString, String detailsString, String timestring,
+			String datesString) {
+		super();
+
+		
+		this.titleString = titleString;
+		this.detailsString = detailsString;
+		this.timestring = timestring;
+		this.datesString = datesString;
+		
+	}
+
 	public Events(int trigger, int code, long time, String titleString,
 			String detailsString, String timestring, String datesString,
 			String email, String phone) {
 		super();
-		
+
 		this.trigger = trigger;
 		this.code = code;
 		this.time = time;
@@ -24,12 +36,12 @@ public class Events {
 		this.email = email;
 		this.phone = phone;
 	}
-	
-	public Events(int id ,int trigger, int code, long time, String titleString,
+
+	public Events(int id, int trigger, int code, long time, String titleString,
 			String detailsString, String timestring, String datesString,
 			String email, String phone) {
 		super();
-		this.id=id;
+		this.id = id;
 		this.trigger = trigger;
 		this.code = code;
 		this.time = time;

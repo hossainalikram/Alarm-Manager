@@ -3,7 +3,9 @@ package com.example.alarmmanager;
 import android.os.Bundle;
 import android.R.integer;
 import android.app.Activity;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class DetailsActivity extends Activity {
@@ -18,6 +20,9 @@ public class DetailsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_details);
+		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		tv_title = (TextView) findViewById(R.id.tv_title);
 		tv_details = (TextView) findViewById(R.id.tv_details);
 		tv_time = (TextView) findViewById(R.id.tv_time);
@@ -55,6 +60,19 @@ public class DetailsActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.details, menu);
 		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		
+		if(item.getItemId()==android.R.id.home){
+			 NavUtils.navigateUpFromSameTask(this);        
+			 return true;
+			
+		}
+		
+		return super.onOptionsItemSelected(item);
 	}
 
 }

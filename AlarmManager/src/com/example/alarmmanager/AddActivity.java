@@ -8,6 +8,7 @@ import android.R.integer;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +26,8 @@ import android.widget.TimePicker;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		setContentView(R.layout.activity_add);
 		
 		MainActivity.ok=2;
@@ -48,6 +51,13 @@ import android.widget.TimePicker;
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
+		
+		if(item.getItemId()==android.R.id.home){
+			 NavUtils.navigateUpFromSameTask(this);        
+			 return true;
+			
+		}
+		
 		if (item.getItemId() == R.id.add_event) {
 
 			String title, details;
